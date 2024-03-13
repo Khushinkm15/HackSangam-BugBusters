@@ -1,0 +1,255 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* font-family: "Angkor", serif;
+    font-weight: 400;
+    font-style: normal; */
+}
+
+body{
+    height: 100vh;
+    /* width: 100vw; */
+    background-image: url(nasa-1lfI7wkGWZ4-unsplash.jpg);
+}
+.headerr{
+    background-image: url(rescue.jpg) ;
+background-repeat: no-repeat;
+background-size: 100%;
+height: 75rem;
+
+/* width: 200rem; */
+
+}
+.heading{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+    /* border-bottom: solid 4px rgb(42, 39, 39) ; */
+    background-color: white;
+    }
+.logo{
+    height: 150px;
+    border-radius: 50%;
+    background-color: black;
+/* margin: 0.3rem; */
+/* margin: 2rem; */
+}
+.head{
+    color:black;
+    /* margin-top: 2.5rem; */
+    font-size: 4rem;
+    margin-top: 2.5rem;
+    /* font-weight: bold; */
+    font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+nav{
+    margin-left: 12rem;
+    margin-top: 4rem;
+}
+.anchor{
+    font-size: 1.9rem;
+    padding: 1rem;
+    font-weight: bold;
+    color:black;
+    padding: 1.5rem;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    
+    }
+    .anchor:hover{
+    color: blue;
+    }
+    .button{
+        margin-left: 44rem;
+        padding: 1rem;
+        background-color: grey;
+        margin-top: 3.4rem;
+        height: 2rem;
+        width: 10rem;
+        border-radius: 1rem;
+        padding-bottom: 2.2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: black;
+        font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    }
+    .button:hover{
+        background-color: rgb(85, 106, 222);
+    }
+    .headerContent{
+        padding: 0%;
+    }
+    .headingg{
+        color:rgb(8, 8, 104);
+        margin: 2rem;
+        font-size: 3.5rem;
+        font-weight: bolder;
+        margin-top: 0.1rem;
+        margin-bottom: 0%;
+        font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  
+    }
+    
+    
+    .para{
+       font-size: 2.4rem;
+       color: rgb(5, 0, 0);
+        font-weight: bolder;
+        margin: 2rem;
+        line-height: 3rem;
+        max-width: 800px;
+        margin-top: 39rem;
+        font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+        margin-left: 16rem;
+    }
+    .tagline{
+        margin: 1rem;
+        color:black;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-left: 35rem;
+        padding: 0%;
+        font-family: "Great Vibes", cursive;
+  font-weight: 800;
+    }
+    .vision{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        /* padding: 0.6rem; */
+        background-color: rgba(62, 64, 164, 0.334);
+        width: 100%;
+        height: 50rem;
+        /* align-items: center; */
+        /* margin: 0 auto; */
+        
+        padding: 2rem;
+    }
+    .contentRight{
+        /* text-align: center; */
+    }
+    .contentLeft{
+        display: flex;
+        align-items: end;
+        justify-content: end;
+    }
+    
+    /* .visionhead{
+        
+        padding: 1rem;
+        font-size: 2.5rem;
+        color: white;
+        font-weight: bold;
+        /* margin-left: 40rem; 
+        margin-top: 1rem; */
+    
+    .visiontag{
+        /* text-align: center; */
+        
+        /* padding: 1rem;
+        padding: 3rem; */
+        padding-bottom: 3rem;
+        font-size: 3.6rem;
+        color: white;
+    }
+    .visionpara{
+        /* text-align: center; */
+        color: white;
+        margin-top: 2rem;
+        font-size: 2rem;
+        max-width: 1100px;
+        line-height: 3.4rem;
+        /* margin-left: 48rem; */
+    }
+    .problem{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: rgba(57, 52, 132, 0.486);
+        /* text-align: center; */
+        padding: 2rem;
+    }
+    .problemhead{
+        
+        font-size: 3.6rem;
+        color: white;
+        font-weight: bold;
+        /* margin-left: 40rem; */
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .problempara{
+        color: white;
+        font-size: 2rem;
+        max-width: 1600px;
+        line-height: 3rem;
+        /* margin-left: 48rem; */
+    }
+    .solution{
+        /* margin: 2rem; */
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(4,1fr);
+        background-color: rgba(75, 92, 142, 0.314);
+        /* padding: 2rem; */
+       /* max-width: 75%; */
+       /* margin-left: 17rem; */
+        }
+        .card{
+            background-color: rgb(55, 100, 184);
+            text-align: center;
+            color: white;
+            height: 25rem;
+            border-radius: 2rem;
+            padding: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin: 2rem;
+        }
+        .cardhead{
+            font-size: 2rem;
+            
+        }
+        .cardpara{
+            padding-top: 1rem;
+            font-size: 1.2rem;
+        }
+        /* .solutionhead{
+            text-align: center;
+        color: white;
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin-left: 48rem;
+        } */
+        .cardimg{
+            padding: 2rem;
+            object-fit: cover;
+            height: 12rem;
+            width: 12rem;
+            /* border-radius: 2rem; */
+        }
+        .card img{
+            border-radius: 75%;
+        }
+        
+        .vision-image{
+            display: flex;
+            justify-content: end;
+            /* align-items: center; */
+            align-items: start;
+        }
+
+
+    
+    
