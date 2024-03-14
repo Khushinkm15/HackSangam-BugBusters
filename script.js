@@ -5,5 +5,5 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function sendSOS() {
-    alert('SOS signal sent! Help is on the way.');
+    alert('SOS signal sent! Help is on the way. \nEmergency HelpLine Number : +91-1770045678');
 }

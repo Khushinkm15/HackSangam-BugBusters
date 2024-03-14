@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search and Rescue Tool</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <style>
+        #map { height: 400px; }
+        .container { margin-top: 250px; }
+        body{
+            background-color: rgba(128, 128, 128, 0.593);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Search and Rescue Tool</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="latitude">Last Known Latitude:</label>
+                    <input type="number" step="any" class="form-control" id="latitude" placeholder="Enter latitude">
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Last Known Longitude:</label>
+                    <input type="number" step="any" class="form-control" id="longitude" placeholder="Enter longitude">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time Elapsed Since Last Contact (hours):</label>
+                    <input type="number" class="form-control" id="time" placeholder="Enter time">
+                </div>
+                <div class="form-group">
+                    <label for="windSpeed">Wind Speed (km/h):</label>
+                    <input type="number" class="form-control" id="windSpeed" placeholder="Enter wind speed">
+                </div>
+                <div class="form-group">
+                    <label for="searchRadius">Search Radius (km):</label>
+                    <input type="number" class="form-control" id="searchRadius" placeholder="Enter search radius">
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate Search Area</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        
+        var map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        
+        $(document).on('submit', '#searchForm', function(e) {
+            e.preventDefault();
+            var lastLatitude = parseFloat($('#latitude').val());
+            var lastLongitude = parseFloat($('#longitude').val());
+            var timeElapsed = parseFloat($('#time').val());
+            var windSpeed = parseFloat($('#windSpeed').val());
+            var searchRadius = parseFloat($('#searchRadius').val());
+
+            
+            var maxDriftDistance = windSpeed * timeElapsed;
+            var searchAreaRadius = maxDriftDistance + searchRadius;
+
+            
+            map.eachLayer(function(layer) {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            
+            L.marker([lastLatitude, lastLongitude]).addTo(map)
+                .bindPopup('Last Known Position')
+                .openPopup();
+
+            
+            L.circle([lastLatitude, lastLongitude], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: searchAreaRadius * 1000 
+            }).addTo(map)
+                .bindPopup('Search Area');
+
+            
+            map.setView([lastLatitude, lastLongitude], 10);
+        });
+    });
+</script>
+
+</body>
+</html>
