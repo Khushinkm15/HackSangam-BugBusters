@@ -12,9 +12,14 @@ body{
     height: 100vh;
     /* width: 100vw; */
     background-image: url(nasa-1lfI7wkGWZ4-unsplash.jpg);
+    background-color: rgba(0, 0, 0, 0.56);
+   background-blend-mode: overlay;
+    
 }
 .headerr{
     background-image: url(rescue.jpg) ;
+    background-color:rgba(255, 255, 255, 0.132);
+    background-blend-mode: overlay;
 background-repeat: no-repeat;
 background-size: 100%;
 height: 75rem;
@@ -29,10 +34,25 @@ height: 75rem;
     /* border-bottom: solid 4px rgb(42, 39, 39) ; */
     background-color: white;
     }
+    
+    .h{
+        animation: slideFromleft 1s ease forwards;
+        opacity: 0;
+    }
+    @keyframes slideFromleft{
+0%{
+    opacity: 0%;
+    transform: translateX(-100%);
+}
+100%{
+    opacity: 1;
+    transform: translateX(0);
+}
+    }
 .logo{
     height: 150px;
     border-radius: 50%;
-    background-color: black;
+    
 /* margin: 0.3rem; */
 /* margin: 2rem; */
 }
@@ -64,10 +84,10 @@ nav{
     .anchor:hover{
     color: blue;
     }
-    .button{
+    .buttontab{
         margin-left: 44rem;
         padding: 1rem;
-        background-color: grey;
+        background-color: rgb(253, 251, 251);
         margin-top: 3.4rem;
         height: 2rem;
         width: 10rem;
@@ -75,7 +95,7 @@ nav{
         padding-bottom: 2.2rem;
         font-size: 1.2rem;
         font-weight: bold;
-        color: black;
+        color: red;
         font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -101,7 +121,8 @@ nav{
     
     .para{
        font-size: 2.4rem;
-       color: rgb(5, 0, 0);
+       color:#FFCC00;
+       text-shadow: black;
         font-weight: bolder;
         margin: 2rem;
         line-height: 3rem;
@@ -115,76 +136,71 @@ nav{
     .tagline{
         margin: 1rem;
         color:black;
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: bold;
-        margin-left: 35rem;
+        margin-left: 32rem;
         padding: 0%;
-        font-family: "Great Vibes", cursive;
-  font-weight: 800;
+        font-family:Arial, Helvetica, sans-serif;
+  
     }
-    .vision{
+    .vision {
         margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
-        flex-direction: column;
         gap: 2rem;
-        /* padding: 0.6rem; */
         background-color: rgba(62, 64, 164, 0.334);
         width: 100%;
-        height: 50rem;
-        /* align-items: center; */
-        /* margin: 0 auto; */
-        
+        height: auto; /* Change this to 'auto' to allow content to determine height */
         padding: 2rem;
+        align-items: center; /* Align items vertically */
     }
-    .contentRight{
-        /* text-align: center; */
+    
+    .contentRight {
+        flex: 1; /* Grow to fill available space */
     }
-    .contentLeft{
+    
+    .contentLeft {
+        flex: 1; /* Grow to fill available space */
         display: flex;
-        align-items: end;
-        justify-content: end;
+        justify-content: flex-end; /* Align image to the right */
+        padding-right: 6rem;
     }
     
-    /* .visionhead{
-        
-        padding: 1rem;
-        font-size: 2.5rem;
-        color: white;
-        font-weight: bold;
-        /* margin-left: 40rem; 
-        margin-top: 1rem; */
-    
-    .visiontag{
-        /* text-align: center; */
-        
-        /* padding: 1rem;
-        padding: 3rem; */
+    .visiontag {
         padding-bottom: 3rem;
         font-size: 3.6rem;
-        color: white;
+        color: rgb(251, 251, 252);
+        padding-left: 14rem;
+        font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+        /* text-align: center; Center the text */
     }
-    .visionpara{
-        /* text-align: center; */
+    
+    .visionpara {
         color: white;
-        margin-top: 2rem;
         font-size: 2rem;
         max-width: 1100px;
         line-height: 3.4rem;
-        /* margin-left: 48rem; */
+        padding-left:14rem ;
+        /* text-align: center; Center the text */
+        font-family: "Ubuntu", sans-serif;
+  font-weight: 100px;
     }
     .problem{
         margin-top: 1rem;
         margin-bottom: 1rem;
-        background-color: rgba(57, 52, 132, 0.486);
+        background-color: rgba(62, 64, 164, 0.334);
         /* text-align: center; */
         padding: 2rem;
+        padding-left: 16.5rem;
     }
     .problemhead{
         
         font-size: 3.6rem;
-        color: white;
+        color: rgb(252, 251, 251);
         font-weight: bold;
+        font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
         /* margin-left: 40rem; */
         margin-top: 1rem;
         margin-bottom: 2rem;
@@ -194,6 +210,8 @@ nav{
         font-size: 2rem;
         max-width: 1600px;
         line-height: 3rem;
+        font-family: "Ubuntu", sans-serif;
+  font-weight: 100px;
         /* margin-left: 48rem; */
     }
     .solution{
@@ -201,7 +219,7 @@ nav{
         display: grid;
         grid-gap: 2rem;
         grid-template-columns: repeat(4,1fr);
-        background-color: rgba(75, 92, 142, 0.314);
+        background-color: rgba(57, 93, 202, 0.314);
         /* padding: 2rem; */
        /* max-width: 75%; */
        /* margin-left: 17rem; */
@@ -216,14 +234,25 @@ nav{
             margin-left: 1rem;
             margin-right: 1rem;
             margin: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease,box-shadow 0.3s ease;
+        }
+        .card:hover{
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .cardhead{
             font-size: 2rem;
+            font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
             
         }
         .cardpara{
             padding-top: 1rem;
             font-size: 1.2rem;
+            font-family: "Ubuntu", sans-serif;
+  font-weight: 100px;
+  line-height: 1.6rem;
         }
         /* .solutionhead{
             text-align: center;
@@ -243,13 +272,117 @@ nav{
             border-radius: 75%;
         }
         
-        .vision-image{
-            display: flex;
-            justify-content: end;
-            /* align-items: center; */
-            align-items: start;
+       .visionimg{
+        margin-top: 5rem;
+        height: 26rem;
+       }
+       
+       .sos-section {
+        background-color: #ff0000;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+        margin: 4rem;
+        height: 36rem;
+        margin-bottom: 5rem;
+        margin-left: 40rem;
         }
-
-
     
+    .sos-heading {
+        font-size: 3.6rem;
+        padding: 2rem;
+        font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+    }
+    .sos-description {
+        font-size: 2rem;
+        margin: 2rem;
+        font-family: "Ubuntu", sans-serif;
+  font-weight: 100px;
+  line-height: 3rem;
+    }
     
+    .sos-button {
+        background-color: #dc8787;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 3rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .sos-button:hover {
+        background-color: #cc0000;
+    }
+    
+    .sos-help {
+        font-size: 2rem;
+        margin-top: 2rem;
+        font-family: "Ubuntu", sans-serif;
+  font-weight: 100px;
+  line-height: 3rem;
+    }
+    .footerContainer{
+        background-color: rgba(140, 137, 137, 0.784);
+        padding: 0 2rem;
+        margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    }
+    .footer{
+          max-width: 100%;
+          padding: 1.2rem 2.4rem;
+          text-align: left;
+          display: flex;
+          justify-content: space-between;
+          padding-right: 2rem;
+    }
+        .footerGrid{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        grid-gap: 5.67rem;
+        width: 100%;
+        padding-top: 1.4rem;
+        /* padding: 2rem 0.4rem; */
+        }
+        .footerGridHeading{
+            font-size: 2.2rem;
+            font-weight: bolder;
+            color: rgb(164, 158, 158);
+            margin-bottom: 1.65rem;
+            font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .overview{
+            color: #f6f4f4;
+            font-size: 1.2rem;
+            font-family: "Ubuntu", sans-serif;
+  font-weight: 300px;
+        }
+        .footerLinks{
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .copyright{
+            color: white;
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 0.3rem solid #E5E7EB;
+            font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+        }
+        #searchbar{
+            border-radius: 25%;
+            background-color: red;
+        }
